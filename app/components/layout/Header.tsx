@@ -17,41 +17,45 @@ export const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full z-50 bg-gray-900 text-white">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
+    <header className="fixed w-full z-50 bg-gray-900 text-white" style={{ maxWidth: '100vw', overflowX: 'hidden' }}>
+      <div className="w-full px-4 py-4 mx-auto sm:px-6" style={{ maxWidth: '100%' }}>
+        <div className="flex justify-between items-center w-full">
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-bold"
+            className="text-2xl font-bold min-w-fit"
           >
-            <Link href="/" className="text-teal-400 hover:text-teal-300 transition duration-300">
+            <Link 
+              href="/" 
+              className="text-teal-400 hover:text-teal-300 transition duration-300"
+              style={{ display: 'inline-block' }}
+            >
               Ayesha&apos;s Tech
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          {/* Desktop Navigation - hidden on mobile */}
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="hover:text-teal-300 transition duration-300"
+                className="hover:text-teal-300 transition duration-300 text-nowrap"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <Link href="#contact">
-              <Button variant="secondary" className="ml-4">
+            <Link href="#contact" className="ml-2">
+              <Button variant="secondary" className="text-nowrap">
                 Get Started
               </Button>
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button - visible only on mobile */}
+          <div className="md:hidden flex items-center justify-end">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white focus:outline-none"
@@ -70,21 +74,26 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-gray-800 overflow-hidden"
+            className="md:hidden bg-gray-800 w-full"
+            style={{ overflow: 'hidden' }}
           >
-            <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
+            <div className="flex flex-col space-y-3 px-4 py-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white hover:text-teal-300 transition duration-300 py-2"
+                  className="text-white hover:text-teal-300 transition duration-300 py-2 text-nowrap"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="secondary" className="w-full mt-4">
+              <Link 
+                href="#contact" 
+                onClick={() => setIsMenuOpen(false)}
+                className="mt-2"
+              >
+                <Button variant="secondary" className="w-full">
                   Get Started
                 </Button>
               </Link>

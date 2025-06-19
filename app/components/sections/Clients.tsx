@@ -1,4 +1,3 @@
-// components/sections/Clients.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -6,7 +5,6 @@ import { Container } from '../common/Container';
 import { SectionTitle } from '../common/SectionTitle';
 import Image from 'next/image';
 
-// Replace these with your actual client logos
 const clients = [
   {
     name: 'Airbnb',

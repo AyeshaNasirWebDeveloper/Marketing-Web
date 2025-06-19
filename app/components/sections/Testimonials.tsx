@@ -60,7 +60,7 @@ export const Testimonials = () => {
                   className="absolute inset-0 bg-gray-50 rounded-xl p-8 shadow-md"
                 >
                   <div className="flex flex-col h-full justify-center">
-                    <div className="text-2xl mb-6 text-gray-700 italic"> {testimonial.content}</div>
+                    <div className="text-2xl mb-6 text-gray-700 italic"> &#39;&#39;{testimonial.content}&#39;&#39;</div>
                     <div className="mt-auto">
                       <div className="font-bold text-lg text-gray-800">{testimonial.name}</div>
                       <div className="bg-indigo-600 text-white px-2 py-1 rounded inline-block text-sm">
