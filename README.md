@@ -112,7 +112,7 @@ marketing-agency/
 
 Deploy to Vercel (recommended):
 
-[![Check Live ](https://marketing-web-alpha.vercel.app)]
+[[Check Live ](https://marketing-web-alpha.vercel.app)]
 
 Or deploy to other platforms:
 
